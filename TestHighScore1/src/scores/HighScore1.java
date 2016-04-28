@@ -6,10 +6,17 @@ import java.io.*;
 
 public class HighScore1 {
 
+	/*
+	 *  Constructeur
+	 */
+
   	public void HighScore() {	
 	}
 	
-	 
+	/*
+	 *  Fonction getScores permetant de recuperer les scores
+	 */
+	
 	public String[] getScores(){
 
 		String[] temp = new String[500];
@@ -20,8 +27,8 @@ public class HighScore1 {
 
 		URL link = new URL("https://thingspeak.com/channels/111610/feeds.csv");
 		URLConnection connexion = link.openConnection();
-		InputStreamReader inStream = new InputStreamReader(connexion.getInputStream());
-		BufferedReader buffer = new BufferedReader(inStream);
+		InputStreamReader Stream = new InputStreamReader(connexion.getInputStream());
+		BufferedReader buffer = new BufferedReader(Stream);
 		String header = buffer.readLine();
 		/*
 		 * Saut de ligne dans le fichier pour ne pas recuperer la ligne de definition
@@ -33,11 +40,16 @@ public class HighScore1 {
     		header = buffer.readLine();
 		}
 		
-		inStream.close();
-		
+		Stream.close();
 		} catch (Exception e) { 
 			e.printStackTrace(); 
 		}
+
+
+		/*
+		 *  On recupere les données du tableau temporaire pour ajuster la taille
+		 */
+
 		String[] result = new String[i];
 		int j =0;
 		for (j=0; j<i ; j++){
