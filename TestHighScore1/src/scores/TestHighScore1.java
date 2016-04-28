@@ -1,5 +1,4 @@
 package scores;
-import java.math.*;
 import java.util.*;
 import java.io.*;
 
@@ -81,21 +80,31 @@ public class TestHighScore1 {
     };
     
     private static void result(String S, String i){
-        System.out.println("Monsieur " + S + " votre score est : " + i + "\n");
+        System.out.println(S + " votre score est : " + i + "\n");
     };
+    
     
     public static void main(String[] args){
+    	
+    	HighScore1 highScores = new HighScore1();
+    	String[] scores = highScores.getScores();
+    	System.out.println("Liste complete des scores sur le .csv :");
+    	
+    	int k = 0;
+    	for(k=0;k<scores.length; k++){
+    		System.out.println(scores[k]);
+    	}
+    	
+    	
     	int j=0;
     	String name = askName();
-    	String[] scores = getRanking();
-    	String score = getRandomScore(scores);
-    	result(name, score);
+    	String[] ranking = getRanking();
+    	String score = getRandomScore(ranking);
+    	result(name, score); 
     	
-		System.out.println("Et voici la liste complete des scores :");
+		System.out.println("Et voici la liste complete des scores en .txt :");
     	for(j=0;j<10;j++){
-    		System.out.println(scores[j]);
+    		System.out.println(ranking[j]);
     	}
-    };
-    
-
+    }
 }
