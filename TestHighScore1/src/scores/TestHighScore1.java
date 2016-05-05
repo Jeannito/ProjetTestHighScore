@@ -2,7 +2,17 @@ package scores;
 import java.util.*;
 import java.io.*;
 
+	/**
+	@author Hugo Fazio and Jean Bruté de Rémur
+	@version 1
+	*/
+
 public class TestHighScore1 {
+	
+	/**
+	Get name from input and return name
+	@return name
+	*/
     
     private static String askName(){
         System.out.println("Enter your name please :");
@@ -12,6 +22,11 @@ public class TestHighScore1 {
         System.out.println("\nBienvenue " + name + "\n");
         return name;
     };
+    
+    	/**
+		gets the scores from the csv
+		@return a table with the scores
+	*/
     
     private static String[] getRanking(){
     	int i = 0;
@@ -69,15 +84,25 @@ public class TestHighScore1 {
         return score;
              
     };
-    /*
-     * Tirage aleatoire dans le tableau, en utilisant sa taille
-     */
+    
+	/**
+		take a random value of the score table
+		@param tab : tab of int containing the scores
+		@return the random score value
+	*/
+	
     private static String getRandomScore(String[] S){
     	int k = S.length;
     	Random rand = new Random();
     	int nb = rand.nextInt(k);
     	return S[nb];
     };
+    
+    	/**
+		print the score and name as output
+		@param S : the name of player
+		@param i : the score of player
+	*/
     
     private static void result(String S, String i){
         System.out.println(S + " votre score est : " + i + "\n");
