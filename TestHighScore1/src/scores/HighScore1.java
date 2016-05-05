@@ -16,8 +16,9 @@ public class HighScore1 {
   	public void HighScore() {	
 	}
 	
-	/*
-	 *  Fonction getScores permetant de recuperer les scores
+	/**
+	 Return the result of the feed.csv
+	 @return a tab with the values read from the channel
 	 */
 	
 	public String[] getScores(){
