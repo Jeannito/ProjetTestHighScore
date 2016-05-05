@@ -2,7 +2,10 @@ package scores;
 import java.net.*;
 import java.io.*;
 
-
+	/**
+		@author Hugo Fazio Jean Bruté de Rémur
+		@version 1
+	*/
 
 public class HighScore1 {
 
