@@ -1,0 +1,50 @@
+package scores;
+
+public class BestPlayer{
+
+	String name=new String();
+	int score=0;
+
+	public BestPlayer(){
+		
+	}
+
+	public BestPlayer(String nm, int scr){
+
+		score=scr;
+		name=nm;
+	}
+
+	public int getScore(){
+
+		return score;
+	}
+
+	public String getName(){
+
+		return name;
+	}
+
+	public void setScore(int sc){
+
+		score=sc;
+	}
+
+	public void setName(String nm){
+
+		name=nm;
+	}
+
+
+	public int compareTo(BestPlayer b){
+
+		if (score<b.getScore()) return -1;
+		if (score>b.getScore()) return 1;
+		return 0;
+
+	}
+
+
+
+
+}
