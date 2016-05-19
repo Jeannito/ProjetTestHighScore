@@ -167,7 +167,7 @@ public class HighScore2 {
 				y++;
 	
 			}
-		return resList.toArray(new BestPlayer[10]);
+		return resList.toArray(new BestPlayer[1]);
 	}
 }
 
