@@ -1,6 +1,7 @@
 package scores;
 import java.util.*;
 import java.io.*;
+import java.net.*;
 
 	/**
 	@author Hugo Fazio and Jean Bruté de Rémur
@@ -120,18 +121,7 @@ public class TestHighScore2 {
     		System.out.println(scores[k]);
     	}
     	
-    	//get the 10 best score
-    	BestPlayer[] tenBest = highScores.tenBestScores(scores);
-    	
-    	//affiche les dix meilleurs scores
-    	System.out.println("Liste des dix meilleurs scores :");
-    	
 
-		for (int i=0;i<tenBest.length;i++){
-
-			String[] parts = (scores[i]).split(",");          			
-            System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
-		}
     	
     	int j=0;
     	
@@ -148,8 +138,20 @@ public class TestHighScore2 {
     	result(name, score); 
     	
 		System.out.println("Et voici la liste complete des scores possibles :");
-    	for(j=0;j<10;j++){
+    	for(j=0;j<ranking.length;j++){
     		System.out.println(ranking[j]);
+    	}
+    	
+    	//get the 10 best score
+    	BestPlayer[] tenBest = highScores.tenBestScores(scores);
+    	
+    	//write the ten bests scores
+    	System.out.println("Liste des dix meilleurs scores :");
+    	
+    	
+		for (int i=0;i<tenBest.length;i++){        			
+            System.out.println(" Nom: "+tenBest[i].getName()+" Score: "+tenBest[i].getScore());
+
     	}
     }
 }
