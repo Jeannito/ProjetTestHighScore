@@ -71,39 +71,39 @@ public class HighScore2 {
 	}
 
 	
-		/*We did it with the Arraylist for this time because it was very hard with the tables*/
+		/*Nous sommes passer aux listes parceque impossible de faire avec des tableaux*/
 	
 		public BestPlayer[] tenBestScores(String[] readScores){
-			String n;
-			BestPlayer[] bestTenPlayer = new BestPlayer[10];
-			int i=0;
-			
+			String name;
 			ArrayList<BestPlayer> allBest = new ArrayList<BestPlayer>();
 			for (String ligne : readScores) {
-				String[] scoreTab = ligne.split(",");
-				if(scoreTab.length!=1){
+				String[] score = ligne.split(",");
+				if(score.length!=1){
 	
-				if(scoreTab.length==4){
-					n = scoreTab[3];
-				}
-				else
-				{
-					n="";
-				}
+					if(score.length==4){
+						name = score[3];
+					}
+					else
+					{
+						name="";
+					}
 					
-				int score = Integer.parseInt(scoreTab[2]);
-				BestPlayer p = new BestPlayer(n, score);
-				allBest.add(p);
+					int playerScore = Integer.parseInt(score[2]);
+					BestPlayer p = new BestPlayer(name, playerScore);
+					allBest.add(p);
 				}
 			}
 			
 			Collections.sort(allBest,Collections.reverseOrder());
-
+			BestPlayer[] top10 = new BestPlayer[10];
+			int i=0;
 			while(i < 10 && i < allBest.size()){
-				bestTenPlayer[i] = allBest.get(i);
+				top10[i] = allBest.get(i);
 				i++;
 			}
-			return bestTenPlayer;
+	
+			return top10;
+		
 	}
 }
 

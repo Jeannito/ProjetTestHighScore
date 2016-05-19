@@ -1,6 +1,6 @@
 package scores;
 
-public class BestPlayer implements Comparable<BestPlayer>{
+public class BestPlayer{
 
 	String name=new String();
 	int score=0;

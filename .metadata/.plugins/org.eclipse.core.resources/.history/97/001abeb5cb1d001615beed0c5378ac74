@@ -103,6 +103,7 @@ public class HighScore2 {
 				bestTenPlayer[i] = allBest.get(i);
 				i++;
 			}
+	
 			return bestTenPlayer;
 	}
 }

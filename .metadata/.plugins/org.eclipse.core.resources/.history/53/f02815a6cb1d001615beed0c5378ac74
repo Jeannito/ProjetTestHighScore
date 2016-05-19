@@ -92,7 +92,7 @@ public class HighScore2 {
 				}
 					
 				int score = Integer.parseInt(scoreTab[2]);
-				BestPlayer p = new BestPlayer(n, score);
+				BestPlayer p = new BestPlayer(name, score);
 				allBest.add(p);
 				}
 			}
@@ -103,6 +103,7 @@ public class HighScore2 {
 				bestTenPlayer[i] = allBest.get(i);
 				i++;
 			}
+	
 			return bestTenPlayer;
 	}
 }

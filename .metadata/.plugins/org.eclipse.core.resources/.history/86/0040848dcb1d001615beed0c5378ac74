@@ -71,10 +71,10 @@ public class HighScore2 {
 	}
 
 	
-		/*We did it with the Arraylist for this time because it was very hard with the tables*/
+		/*We did it with the arraylist for this time beacause it was very hard with the tables*/
 	
 		public BestPlayer[] tenBestScores(String[] readScores){
-			String n;
+			String name;
 			BestPlayer[] bestTenPlayer = new BestPlayer[10];
 			int i=0;
 			
@@ -84,15 +84,15 @@ public class HighScore2 {
 				if(scoreTab.length!=1){
 	
 				if(scoreTab.length==4){
-					n = scoreTab[3];
+					name = scoreTab[3];
 				}
 				else
 				{
-					n="";
+					name="";
 				}
 					
 				int score = Integer.parseInt(scoreTab[2]);
-				BestPlayer p = new BestPlayer(n, score);
+				BestPlayer p = new BestPlayer(name, score);
 				allBest.add(p);
 				}
 			}
@@ -103,7 +103,9 @@ public class HighScore2 {
 				bestTenPlayer[i] = allBest.get(i);
 				i++;
 			}
+	
 			return bestTenPlayer;
+		
 	}
 }
 

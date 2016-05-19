@@ -70,40 +70,92 @@ public class HighScore2 {
 
 	}
 
-	
-		/*We did it with the Arraylist for this time because it was very hard with the tables*/
+
+	/*public BestPlayer[] tenBestScores(String [] readScores){
+
+		BestPlayer[] allBest= new BestPlayer[readScores.length];
+
+		for(int i=0;i<readScores.length;i++){
+			String[] parts = ((String)readScores[i]).split(",");
+			
+			if(parts.length!=1){
+				allBest[i]=new BestPlayer();
+				if(parts.length==4){
+					allBest[i].setName(parts[3]);
+				}else{
+					allBest[i].setName("");
+				}
+				allBest[i].setScore(Integer.parseInt(parts[2]));
+				
+			}
+		}
+
+
+
+
+		int i=1;
+		BestPlayer temp;
+		BestPlayer temp1;
+
+		while((i<allBest.length)){
+			
+
+			int j = i;
+			while(allBest[j-1].getScore() < allBest[j].getScore() && j>=1)
+			{
+				System.out.println("test"+allBest[j].getScore()+":"+allBest[j].getName());
+				temp1 = allBest[j];
+				temp = allBest[j-1];
+				allBest[j-1] = temp1;
+				allBest[j] = temp;
+
+				j--;
+			}
+
+			i++;
+
+		}
+
+		BestPlayer[] resultat = new BestPlayer[10];
+
+		int y=0;
+		for(y=0;y<10;y++){
+
+			resultat[y]= allBest[y];
+
+		}
+
+
+		return resultat;*/
 	
 		public BestPlayer[] tenBestScores(String[] readScores){
-			String n;
-			BestPlayer[] bestTenPlayer = new BestPlayer[10];
-			int i=0;
-			
+			String name;
 			ArrayList<BestPlayer> allBest = new ArrayList<BestPlayer>();
 			for (String ligne : readScores) {
-				String[] scoreTab = ligne.split(",");
-				if(scoreTab.length!=1){
+				String[] score = ligne.split(",");
+				if(score.length!=1){
 	
-				if(scoreTab.length==4){
-					n = scoreTab[3];
-				}
-				else
-				{
-					n="";
-				}
-					
-				int score = Integer.parseInt(scoreTab[2]);
-				BestPlayer p = new BestPlayer(n, score);
-				allBest.add(p);
+					if(score.length==4){
+						name = score[3];
+					}else{
+						name="";
+					}
+					int playerScore = Integer.parseInt(score[2]);
+					BestPlayer p = new BestPlayer(name, playerScore);
+					allBest.add(p);
 				}
 			}
 			
 			Collections.sort(allBest,Collections.reverseOrder());
-
+			BestPlayer[] top10 = new BestPlayer[10];
+			int i=0;
 			while(i < 10 && i < allBest.size()){
-				bestTenPlayer[i] = allBest.get(i);
+				top10[i] = allBest.get(i);
 				i++;
 			}
-			return bestTenPlayer;
+	
+			return top10;
+		
 	}
 }
 
