@@ -4,13 +4,13 @@ import java.io.*;
 import java.net.*;
 
 /**
-		@author Hugo Fazio Jean Bruté de Rémur
-		@version 1
+	*	@author Hugo Fazio Jean Bruté de Rémur
+	*	@version 4
  */
 
 public class HighScore4 {
 
-	/*
+	/**
 	 *  Constructeur
 	 */
 	
@@ -18,9 +18,9 @@ public class HighScore4 {
 	}
 
 	/**
-	 Return the result of the feed.csv
-	 @return a tab with the values read from the channel
-	 */
+	* Return the result of the feed.csv
+	* @return a tab with the values read from the channel
+	*/
 
 	public String[] getScores(){
 
@@ -75,9 +75,9 @@ public class HighScore4 {
 	
 		/**
 		 *Return the 10 best scores from all scores
-		 *@param readScore : tab of scores
-		 *@return a tab with the ten best scores
-		 */
+		 * @param readScores : tab of scores
+		 * @return a tab with the ten best scores
+		*/
 		
 		public BestPlayer[] tenBestScores(String[] readScores){
 			String n;

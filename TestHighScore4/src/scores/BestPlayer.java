@@ -2,11 +2,18 @@ package scores;
 
 public class BestPlayer implements Comparable<BestPlayer>{
 
-	
+	/**
+	*	@author Hugo Fazio Jean Bruté de Rémur
+	*	@version 4
+    */
+
 	
 	String name=new String();
 	int score=0;
-
+	/**
+	 * Constructor
+	 */
+	
 	public BestPlayer(){
 		
 	}

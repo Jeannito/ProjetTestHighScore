@@ -2,17 +2,18 @@ package scores;
 import java.util.*;
 import java.io.*;
 
+
 	/**
-	@author Hugo Fazio and Jean Bruté de Rémur
-	@version 1
-	*/
+	 * @author Hugo Fazio and Jean Bruté de Rémur
+	 * @version 4
+	 */
 
 public class TestHighScore4 {
 	
 	/**
-	Get name from input and return name
-	@return name
-	*/
+	 * Ask and take back the user name
+	 * @return name
+	 */
     
     private static String askName(){
         System.out.println("Enter your name please :");
@@ -21,12 +22,12 @@ public class TestHighScore4 {
         /*sc.close();*/
         System.out.println("\nBienvenue " + name + "\n");
         return name;
-    };
+    }
     
-    	/**
-		gets the scores from the csv
-		@return a table with the scores
-	*/
+	/**
+	 * Take all scores in one tab
+	 * @return tab of scores
+	 */
     
     private static String[] getRanking(){
     	int i = 0;
@@ -34,7 +35,7 @@ public class TestHighScore4 {
     	File ranking = new File("src/scores/scoreSamples.txt");
     	
     	/*
-    	 * Recuperation du nombre de scores dans le fichier pour créer un tableau adapté
+    	 Recuperation du nombre de scores dans le fichier pour créer un tableau adapté
     	 */
     	try {	
     		FileReader read = new FileReader(ranking);
@@ -83,30 +84,29 @@ public class TestHighScore4 {
         }
         return score;
              
-    };
+    }
     
 	/**
-		take a random value of the score table
-		@param tab : tab of int containing the scores
-		@return the random score value
-	*/
-	
+	 * Select a random score from the existing scores
+	 * @param S : tab of the scores
+	 * @return the random score obtained
+	 */
+    
     private static String getRandomScore(String[] S){
     	int k = S.length;
     	Random rand = new Random();
     	int nb = rand.nextInt(k);
     	return S[nb];
-    };
+    }
     
-    	/**
-		print the score and name as output
-		@param S : the name of player
-		@param i : the score of player
-    	 */
-    
+    /**
+     * Returning his own score to the user
+     * @param S : user name
+     * @param i : user score
+     */
     private static void result(String S, String i){
         System.out.println(S + " votre score est : " + i + "\n");
-    };
+    }
     
     public static void main(String[] args){
     	
