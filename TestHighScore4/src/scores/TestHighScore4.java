@@ -18,7 +18,7 @@ public class TestHighScore4 {
         System.out.println("Enter your name please :");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        sc.close();
+        /*sc.close();*/
         System.out.println("\nBienvenue " + name + "\n");
         return name;
     };
@@ -102,27 +102,21 @@ public class TestHighScore4 {
 		print the score and name as output
 		@param S : the name of player
 		@param i : the score of player
-	*/
+    	 */
     
     private static void result(String S, String i){
         System.out.println(S + " votre score est : " + i + "\n");
     };
-    
-    private static String askPlayer(){
-        System.out.println("Voulez vous encore jouer ? (y : yes, other : no)");
-        Scanner scanner = new Scanner(System.in);
-        String response = scanner.nextLine();
-        scanner.close();
-        return response;
-    };
-    
     
     public static void main(String[] args){
     	
     	
     	String choice = "y";
     	
-    	while(choice == "y"){
+    	//Ask the name
+    	String name = askName();
+    	
+    	while(choice.equals("y")){
 	    	HighScore4 highScores = new HighScore4();
 	    	String[] scores = highScores.getScores();
 	    	System.out.println("Liste complete des scores sur le .csv :");
@@ -131,13 +125,6 @@ public class TestHighScore4 {
 	    	for(k=0;k<scores.length; k++){
 	    		System.out.println(scores[k]);
 	    	}
-	    	
-	
-	    	
-	    	int j=0;
-	    	
-	    	//Ask the name
-	    	String name = askName();
 	    	
 	    	//Get all the score possible
 	    	String[] ranking = getRanking();
@@ -184,7 +171,11 @@ public class TestHighScore4 {
 	        			y++;
 	        		}
 	    	}
-			choice = askPlayer();
+			
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Do you want to play again ? (y/n)");
+			choice = scan.nextLine();
+			/*scan.close();*/
     	}
     }
 }

@@ -5,7 +5,7 @@ import java.net.*;
 
 /**
 		@author Hugo Fazio Jean Bruté de Rémur
-		@version 1
+		@version 3
  */
 
 public class HighScore3 {

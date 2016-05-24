@@ -1,11 +1,10 @@
 package scores;
 import java.util.*;
-import java.net.*;
 import java.io.*;
 
 	/**
 	@author Hugo Fazio and Jean Bruté de Rémur
-	@version 1
+	@version 3
 	*/
 
 public class TestHighScore3 {

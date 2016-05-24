@@ -4,7 +4,7 @@ import java.io.*;
 
 	/**
 	@author Hugo Fazio and Jean Bruté de Rémur
-	@version 1
+	@version 2
 	*/
 
 public class TestHighScore2 {

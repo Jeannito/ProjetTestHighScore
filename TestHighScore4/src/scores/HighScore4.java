@@ -13,7 +13,7 @@ public class HighScore4 {
 	/*
 	 *  Constructeur
 	 */
-
+	
 	public void HighScore() {	
 	}
 
@@ -71,8 +71,14 @@ public class HighScore4 {
 	}
 
 	
-		/*We did it with the Arraylist for this time because it was very hard with the tables*/
+		/*We did it with the Arraylist for this time because it was too hard with tables*/
 	
+		/**
+		 *Return the 10 best scores from all scores
+		 *@param readScore : tab of scores
+		 *@return a tab with the ten best scores
+		 */
+		
 		public BestPlayer[] tenBestScores(String[] readScores){
 			String n;
 			BestPlayer[] bestTenPlayer = new BestPlayer[10];
